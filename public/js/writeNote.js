@@ -20,11 +20,11 @@ console.log(createNoteButton)
 createNoteButton.addEventListener("click", () => {
     // get values from the form
     const noteTitle = document.querySelector("#noteTitle").value
-    const nodeText = document.querySelector("#noteText").value
-    console.log(noteTitle, nodeText)
+    const noteText = document.querySelector("#noteText").value
+    console.log(noteTitle, noteText)
 
     // Write these values to the database /users/${googleUser.uid}
-    firebase.database().ref(`s832rd78474y7`).push({
+    firebase.database().ref(`/users/${googleUser.uid}`).push({
         title: noteTitle,
         text: noteText
     }).then(() => {
